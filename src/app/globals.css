@@ -1,5 +1,5 @@
 :root{
-    --bg: #2d2b42;
+    --bg: #E191CA;
     --bgSoft: #2d2b42;
     --text: #F9E9D0;
     --textSoft: #e5e5e5;
@@ -25,7 +25,7 @@ a{
 }
 
 .container{
-    background-color: #2d2b42;
+    background-color: var(--bg);
     width: 1536px;
     margin: auto;
     padding-left: 50px;
@@ -34,6 +34,7 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 
 

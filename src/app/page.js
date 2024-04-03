@@ -1,4 +1,7 @@
 import styles from "./home.module.css";
+import Image from "next/image";
+
+
 export default function Home() {
   return (
     <>
@@ -18,6 +21,9 @@ export default function Home() {
             <button className={styles.button}>View resume</button>
             <button className={styles.button}>View portfolio</button>
           </div>
+        </div>
+        <div className={styles.imgContainer}>
+          <Image src="/banner.jpg" width={800} height={550}/>
         </div>
       </div>
     </>

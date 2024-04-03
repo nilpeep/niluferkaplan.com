@@ -1,1 +1,4 @@
- 
+ .container{
+    display: flex;
+    background-image: url('/public/banner.jpg');
+ }
