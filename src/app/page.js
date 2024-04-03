@@ -25,7 +25,7 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.imgContainer}>
-              <Image src="/banner1.jpeg" objectFit="cover" fill={true} />
+              <Image src="/banner1.jpeg" objectFit="contain" fill={true} />
             </div>
           </div>
         </div>
