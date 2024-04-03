@@ -1,5 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
+"use client";
+import { useState } from "react";
+import styles from "./links.module.css"
+import NavLink from "./navLink/navLinks"
 
 const Links = () => {
     const links = [
@@ -24,10 +26,44 @@ const Links = () => {
             link: "/portfolio"
         }
     ]
+
+    const session = true
+    const isAdmin = true
+
+    const [open, setOpen] = useState(false)
   return (
-    <div>{links.map((link)=>(
-        <Link href={link.link}>{link.name}</Link>
-    ))}</div>
+    <div className={styles.container}>
+
+    <div className={styles.links}>
+    {links.map((link)=>(
+        <NavLink item={link} key={link.title}/>
+        ))}
+    {
+        session ? (
+            <>
+                {
+                    isAdmin && (
+                        <NavLink item={{name:"Admin", link:"/admin"}}/>
+                        )
+                    }
+            <button className={styles.logout}>logout</button>
+            </>
+        ) : (
+            <NavLink item={{name:"login", link:"/login"}}/>
+            )
+        }
+    </div>
+        <button className={styles.menuButton} onClick={() => setOpen(prev => !prev)}>menu</button>
+        {
+            open && (
+                <div className={styles.mobileLinks}>
+                    {links.map((link,i)=>(
+                        <NavLink item={link} key={i}/>
+                     ))}
+                </div>
+            )
+        }
+        </div>
   )
 }
 
