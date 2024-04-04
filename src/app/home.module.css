@@ -6,40 +6,38 @@
 .textContainer{
     display: flex;
     flex-direction: column;
-   
     flex: 1;
     gap: 70px;
-    position: relative;
-    z-index: 1;
+
+
 }
 
-.empty{
-    flex: 1;
-}
 .imgContainer{
-    position: absolute;
-    bottom: 100px;
-    right: 1150px;
-    width: 700px;
-    height: 500px;
-    z-index: 0;
+    position: relative;
+    flex: 1;
  }
 
 .about{
    display: flex;
-   flex: 2;
+   flex: 3;
 }
 
 
 .title{
     font-size: 96px;
-    text-shadow: 2px 2px 10px #ff5252; 
+    text-shadow: 1px -1px 1px #220310,
+    1px -3px 1px #220310, 
+    2px -3px 1px #220310, 
+    3px -3px 1px #220310, 
+    4px -3px 1px #220310, 
+    5px -7px 6px rgba(16,16,16,0.4);
     flex: 1;
+    color: white;
 }
 
 
  .img{
-    object-fit: cover;
+    object-fit: contain;
  }
 
 .description{
@@ -47,9 +45,32 @@
     
 }
 
+.buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.button{
+    padding: 15px;
+    min-width: 120px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--text);
+
+}
+
+.button:first-child{
+    background-color: var(--btn);
+    color: var(--text);
+}
+
 
 
  .blogs{
-    border: 1px solid #ff5252;
+    background-color: #F4F2EE;
     flex: 1;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 1px 3px 3px black;
  }
