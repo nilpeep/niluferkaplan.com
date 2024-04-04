@@ -4,43 +4,52 @@
 }
 
 .textContainer{
-    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+   
+    flex: 1;
+    gap: 70px;
+    position: relative;
+    z-index: 1;
 }
 
-.about{
-   flex: 4; 
+.empty{
+    flex: 1;
 }
+.imgContainer{
+    position: absolute;
+    bottom: 100px;
+    right: 1150px;
+    width: 700px;
+    height: 500px;
+    z-index: 0;
+ }
+
+.about{
+   display: flex;
+   flex: 2;
+}
+
 
 .title{
     font-size: 96px;
-    text-shadow: 2px 2px 10px #ff5252;
-    position: relative;
-    z-index: 1;
-    
+    text-shadow: 2px 2px 10px #ff5252; 
+    flex: 1;
 }
+
+
+ .img{
+    object-fit: cover;
+ }
 
 .description{
-    font-size: 20px;
+    font-size: 16px;
     
 }
 
-.content{
-    display: flex;
-}
 
-.imgContainer{
-    position: relative;
-    flex: 1;    
-    height: 400px;
-    /* bottom: 85px;
-    right: 15px; */
- }
 
  .blogs{
     border: 1px solid #ff5252;
-    flex: 2;
+    flex: 1;
  }
