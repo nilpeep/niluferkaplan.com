@@ -19,24 +19,6 @@ export default function Home() {
               <button className={styles.button}>Contact me</button>
               <button className={styles.button}>Learn more</button>
             </div>
-            <div className={styles.icons}>
-            <Link target="blank" href={'https://github.com/nilpeep'}>
-            <Image src="/social.png" width={50} height={50} />
-            
-            </Link>
-            <Link target="blank" href={'https://medium.com/@niluferk038'}>
-            <Image src="/medium.png" width={50} height={50} />
-            
-            </Link>
-            <Link target="blank" href={'https://www.linkedin.com/in/nilufer-kaplan/'}>
-            <Image src="/linkedin.png" width={50} height={50} />
-            
-            </Link>
-            <Link target="blank" href={'https://stackoverflow.com/users/23589727/nilufer-kaplan'}>
-            <Image src="/stack-overflow.png" width={50} height={50} />
-            
-            </Link>
-            </div>
           </div>
           <div className={styles.imgContainer}>
             <Image className={styles.img} src="/blueBanner.jpeg" fill={true} />

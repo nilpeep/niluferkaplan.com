@@ -1,0 +1,20 @@
+.container{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    opacity: 0.5;
+}
+
+.text{
+    font-size: 12px;
+}
+
+.icons{
+    opacity: 0.8;
+    display: flex;
+    gap: 10px;
+}
