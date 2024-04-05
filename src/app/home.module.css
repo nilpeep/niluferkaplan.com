@@ -25,12 +25,12 @@
 
 .title{
     font-size: 96px;
-    text-shadow: 1px -1px 1px #220310,
+    /* text-shadow: 1px -1px 1px #220310,
     1px -3px 1px #220310, 
     2px -3px 1px #220310, 
     3px -3px 1px #220310, 
     4px -3px 1px #220310, 
-    5px -7px 6px rgba(16,16,16,0.4);
+    5px -7px 6px rgba(16,16,16,0.4); */
     flex: 1;
     color: white;
 }
@@ -41,7 +41,7 @@
  }
 
 .description{
-    font-size: 16px;
+    font-size: 20px;
     
 }
 
@@ -58,6 +58,11 @@
     border-radius: 20px;
     background-color: var(--text);
 
+}
+
+.icons{
+    display: flex;
+    gap: 20px;
 }
 
 .button:first-child{
