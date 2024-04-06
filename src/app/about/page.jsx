@@ -4,9 +4,20 @@ import styles from './about.module.css'
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.imgContainer}>
-      <Image src="/about.png" fill/>
+      <Image className={styles.img} src="/about.png" fill/>
+      </div>
+      <div className={styles.textContainer}>
+      <h1 className={styles.title}>
+      Hi there, It's Nilufer. You can call me Nil.
+      </h1>
+      <p>
+        
+      </p>
+      <p>
+         
+      </p>
       </div>
     </div>
   )

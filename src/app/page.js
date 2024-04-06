@@ -20,9 +20,9 @@ export default function Home() {
               <button className={styles.button}>Learn more</button>
             </div>
           </div>
-          <div className={styles.imgContainer}>
+          {/* <div className={styles.imgContainer}>
             <Image className={styles.img} src="/blueBanner.jpeg" fill={true} />
-          </div>
+          </div> */}
         </div>
         <div className={styles.blogs}>
           <p>lorem10asiodjaslkdjlaskjdla</p>
