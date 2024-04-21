@@ -25,6 +25,10 @@ app.all('/', (req, res) => {
     })
 })
 
+//? router:
+
+app.use(require('./src/routes'))
+
 app.listen(PORT, HOST, () => console.log(`server running at http://${HOST}:${PORT}`))
 
 
