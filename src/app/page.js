@@ -28,6 +28,7 @@ export default function Home() {
         </div>
         <div className={styles.blogs}>
           <BlogCard text={'This Resume helped many in getting an interview calls from companies like Google, Microsoft, Amazon, and many more. '}/>
+          <BlogCard text={'This Resume helped many in getting an interview calls from companies like Google, Microsoft, Amazon, and many more. '}/>
         </div>
       </div>
     </>

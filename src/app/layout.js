@@ -2,7 +2,6 @@ import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
-import Image from "next/image";
 
 const work_Sans = Work_Sans({ subsets: ["latin"] });
 
@@ -17,7 +16,6 @@ export default function RootLayout({ children }) {
       <body className={work_Sans.className}>
         <div className="container">
         <Navbar/>
-        <Image src='/clouds.png' style={{position:'absolute', right:'110px', top:'60px'}} width={300} height={100}/>
         {children}
         <Footer/>
         </div>
