@@ -1,0 +1,54 @@
+.container{
+  background-color: #fff;
+}
+
+.header{
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.userPhoto{
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.userName{
+  font-weight: 500;
+}
+
+.userRole{
+  font-weight: 300;
+}
+
+.userDetails{
+  font-size: small;
+  font-weight: 300;
+}
+
+.postTime{
+  font-size: small;
+  font-weight: 200;
+}
+
+.postSection{
+  font-size: small;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.postText{
+  flex: 1;
+}
+
+.readMore{
+  border: none;
+  background-color: var(--btn);
+  color: var(--text);
+}

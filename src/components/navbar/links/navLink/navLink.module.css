@@ -8,11 +8,11 @@
 
 .container:hover{
     background-color: var(--text);
-    color: var(--bg);
+    color:black;
 }
 
 .active{
     background-color: var(--text);
-    color: var(--bg);
+    color: black;
 }
 

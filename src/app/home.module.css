@@ -1,81 +1,80 @@
-.container{
-    display: flex;
-   
+.container {
+  display: flex;
 }
 
-.textContainer{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 70px;
-
-
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 70px;
 }
 
-.imgContainer{
-    position: relative;
-    flex: 1;
- }
-
-.about{
-   display: flex;
-   flex: 3;
+.imgContainer {
+  position: relative;
+  flex: 1;
 }
 
+.about {
+  display: flex;
+  flex: 3;
+}
 
-.title{
-    font-size: 96px;
-    /* text-shadow: 1px -1px 1px #220310,
+.title {
+  font-size: 96px;
+  /* text-shadow: 1px -1px 1px #220310,
     1px -3px 1px #220310, 
     2px -3px 1px #220310, 
     3px -3px 1px #220310, 
     4px -3px 1px #220310, 
     5px -7px 6px rgba(16,16,16,0.4); */
-    flex: 1;
-    color: white;
+  flex: 1;
+  color: white;
 }
 
-
- .img{
-    object-fit: contain;
- }
-
-.description{
-    font-size: 20px;
-    
+.img {
+  object-fit: contain;
 }
 
-.buttons{
-    display: flex;
-    gap: 20px;
+.description {
+  font-size: 20px;
 }
 
-.button{
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.button {
     padding: 15px;
     min-width: 120px;
     cursor: pointer;
     border: none;
     border-radius: 20px;
     background-color: var(--text);
+  }
 
+.icons {
+  display: flex;
+  gap: 20px;
 }
 
-.icons{
-    display: flex;
-    gap: 20px;
+.button:first-child {
+  background-color: var(--btn);
+  color: var(--text);
 }
 
-.button:first-child{
-    background-color: var(--btn);
-    color: var(--text);
+.blogs {
+  background-color: #f4f2ee;
+  flex: 1;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+
+padding: 5px;
+overflow: scroll;
 }
-
-
-
- .blogs{
-    background-color: #F4F2EE;
-    flex: 1;
-    color: black;
-    border-radius: 5px;
-    box-shadow: 1px 3px 3px black;
- }
