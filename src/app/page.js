@@ -3,6 +3,7 @@ import styles from "./home.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import ButtonDark from "@/components/button/buttonDark";
+import ButtonLight from "@/components/button/buttonLight";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
             </p>
             <div className={styles.buttons}>
               <ButtonDark text={'Contact Me'}/>
-              <button className={styles.button}>Learn more</button>
+              <ButtonLight text={'Learn More'}/>
             </div>
           </div>
           {/* <div className={styles.imgContainer}>
@@ -26,7 +27,7 @@ export default function Home() {
           </div> */}
         </div>
         <div className={styles.blogs}>
-          <BlogCard/>
+          <BlogCard text={'This Resume helped many in getting an interview calls from companies like Google, Microsoft, Amazon, and many more. '}/>
         </div>
       </div>
     </>

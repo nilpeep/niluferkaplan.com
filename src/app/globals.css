@@ -1,7 +1,7 @@
 :root{
     --bg: #0624FE;
     --bgSoft: hsl(245, 21%, 21%);
-    --text: #F4F2EE;
+    --text: white;
     --textSoft: #e5e5e5;
     --btn: #3673fd;
 

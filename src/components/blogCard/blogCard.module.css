@@ -1,5 +1,6 @@
 .container{
   background-color: #fff;
+  position: relative;
 }
 
 .header{
@@ -41,14 +42,23 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .postText{
   flex: 1;
+  padding-bottom: 10px;
 }
 
 .readMore{
-  border: none;
-  background-color: var(--btn);
-  color: var(--text);
+  color: #0140fdb8;
+  cursor: pointer;
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+}
+
+.readMore:hover{
+  text-decoration: underline;
+  
 }
