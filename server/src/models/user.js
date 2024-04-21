@@ -1,53 +1,60 @@
 "use strict"
 
 const { set } = require('mongoose')
-const { mongoose: {Schema, model} } = require('../configs/dbConnection')
+const { mongoose}  = require('../configs/dbConnection')
 const { role } = require('../constraints/role&status')
 const {passwordValidation, emailValidation} = require('../helpers/userValidation')
 const { type } = require('os')
 
 //? User Model:
-const UserSchema = new Schema({
-    username:{
+const UserSchema = new mongoose.Schema({
+
+    username: {
         type: String,
+        trim: true,
         required: true,
         unique: true,
-        trim: true,
         index: true
     },
-    password:{
+
+    password: {
         type: String,
-        required: true,
         trim: true,
-        set: password => passwordValidation(password)
+        required: true
     },
-    email:{
+
+    email: {
         type: String,
-        required: true,
         trim: true,
+        required: true,
         unique: true,
         index: true,
-        set: email => emailValidation(email)
+        // validate: ... // validasyon işlemini pre(save) yapıyor.
     },
-    role:{
-        type: Number,
-        required: true,
+
+    firstName: {
+        type: String,
         trim: true,
-        enum: {
-            message:"user enter valid role",
-            values: Object.keys(role).map(key => Number(key))
-        }
+        required: true
     },
-    isActive:{
+
+    lastName: {
+        type: String,
+        trim: true,
+        required: true
+    },
+
+    isActive: {
         type: Boolean,
-        default: true
+        default: true,
     }
-},{
-    collection:'users',
+
+}, {
+    collection: 'users',
     timestamps: true
 })
 
-module.exports = model('User', UserSchema)
+module.exports = mongoose.model('User', UserSchema)
 
 
 

@@ -8,6 +8,8 @@ const User = require("../models/user")
 
 module.exports = {
     list: async (req,res) =>{
+
+        console.log(req.body)
         const data = await User.find()
 
         res.status(200).send({
@@ -16,8 +18,10 @@ module.exports = {
         })
     },
     create: async (req,res) =>{
-        const data = await User.create(req.body)
 
+        const data = await User.create(req.body)
+        
+        console.log(req.body)
         res.status(201).send({
             error:false,
             data
