@@ -2,6 +2,8 @@ import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import { Provider } from "react-redux";
+import store from "@/store";
 
 const work_Sans = Work_Sans({ subsets: ["latin"] });
 
@@ -12,6 +14,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+ 
     <html lang="en">
       <body className={work_Sans.className}>
         <div className="container">
@@ -21,5 +24,6 @@ export default function RootLayout({ children }) {
         </div>
         </body>
     </html>
+   
   );
 }
