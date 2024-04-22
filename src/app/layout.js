@@ -14,16 +14,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
- 
     <html lang="en">
       <body className={work_Sans.className}>
         <div className="container">
-        <Navbar/>
-        {children}
-        <Footer/>
+          <Navbar />
+          {children}
+          <Footer />
         </div>
-        </body>
+        =
+      </body>
     </html>
-   
   );
 }
