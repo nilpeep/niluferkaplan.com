@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import store from "@/store";
 import { setUser } from "@/store/user";
 
-import { useSelector } from "react-redux";
+
 
 const Links = () => {
   const links = [
@@ -39,7 +39,7 @@ const Links = () => {
   const session = true;
   const isAdmin = false;
 
-  const username = useSelector(state => state.reducer.user)
+  // const username = useSelector(state => state.reducer.user)
 
   const [open, setOpen] = useState(false);
   return (
@@ -74,8 +74,8 @@ const Links = () => {
         </div>
       )}
 
-      <button onClick={() => store.dispatch(setUser('nilufer'))}>login test</button>
-      <div>username : </div>
+      {/* <button onClick={() => store.dispatch(setUser('nilufer'))}>login test</button>
+      <div>username : </div> */}
     </div>
     </Provider>
   );

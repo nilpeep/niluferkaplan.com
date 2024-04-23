@@ -1,5 +1,6 @@
 .dark {
-  padding: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
   cursor: pointer;
   border: none;
   border-radius: 20px;
@@ -12,8 +13,11 @@
   22.3px 22.3px 17.9px rgba(0, 0, 0, 0.006),
   41.8px 41.8px 33.4px rgba(0, 0, 0, 0.007),
   100px 100px 80px rgba(0, 0, 0, 0.01)
-  
   ;
+  max-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dark:hover{
@@ -39,4 +43,7 @@
   41.8px 41.8px 33.4px rgba(0, 0, 0, 0.007),
   100px 100px 80px rgba(0, 0, 0, 0.01)
 ;
+display: flex;
+  align-items: center;
+  justify-content: center;
 }
