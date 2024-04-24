@@ -1,6 +1,7 @@
 .container{
   background-color: #fff;
   position: relative;
+  border-radius: 8px;
 }
 
 .header{
