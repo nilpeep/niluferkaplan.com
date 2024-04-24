@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './button.module.css'
 
-const ButtonDark = ({text}) => {
+const ButtonDark = ({text,onClick}) => {
   return (
-    <div className={styles.dark}>{text}</div>
+    <div onClick={onClick} className={styles.dark}>{text}</div>
   )
 }
 

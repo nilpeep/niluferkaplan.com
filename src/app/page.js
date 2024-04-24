@@ -26,11 +26,10 @@ export default function Home() {
               <br></br> Want to learn more? Check out
             </p>
             <div className={styles.buttons}>
-              <ButtonDark text={"Contact Me"} />
+              <ButtonDark onClick={openModal} text={"Contact Me"} />
               <ButtonLight text={"Learn More"} />
             </div>
             <div>
-              <button onClick={openModal}>Open Modal</button>
               <ContactModal isOpen={isModalOpen} onClose={closeModal}>
                 <p>This is the modal content!</p>
               </ContactModal>

@@ -1,6 +1,8 @@
 .dark {
   padding-right: 15px;
   padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   cursor: pointer;
   border: none;
   border-radius: 20px;
@@ -29,7 +31,10 @@
 }
 
 .light {
-  padding: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   cursor: pointer;
   border: none;
   border-radius: 20px;
@@ -46,4 +51,5 @@
 display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 150px;
 }

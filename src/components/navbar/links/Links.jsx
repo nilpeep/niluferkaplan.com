@@ -74,8 +74,9 @@ const Links = () => {
         </div>
       )}
 
-      <button onClick={() => store.dispatch(setUser('nilufer'))}>login test</button>
-      <div>username :{user}</div> 
+      {/* <button onClick={() => store.dispatch(setUser('nilufer'))}>login test</button>
+      <button onClick={() => store.dispatch(setUser(null))}>logout test</button>
+      <div>username :{user}</div>  */}
     </div>
     </Provider>
   );

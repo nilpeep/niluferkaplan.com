@@ -4,4 +4,16 @@
   justify-content: center;
   flex-direction: column;
   gap: 20px;
+  color: black;
+}
+
+.closeButton{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.closeButton:hover{
+  background-color: rgba(0, 0, 0, 0.192);
 }

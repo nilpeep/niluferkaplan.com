@@ -44,24 +44,13 @@
   gap: 20px;
 }
 
-.button {
-  padding: 15px;
-  min-width: 120px;
-  cursor: pointer;
-  border: none;
-  border-radius: 20px;
-  background-color: var(--text);
-}
+
 
 .icons {
   display: flex;
   gap: 20px;
 }
 
-.button:first-child {
-  background-color: var(--btn);
-  color: var(--text);
-}
 
 .blogs {
   background-color: #f4f2ee;
