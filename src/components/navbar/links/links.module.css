@@ -52,13 +52,29 @@
   right: 0; /* Sağdan başlayarak */
   width: 300px; /* Menü genişliği */
   height: 100vh; /* Tam ekran yüksekliği */
-  transform: translateX(80%); /* Sağdan dışarıda başlar */
+  transform: translateX(75%); /* Sağdan dışarıda başlar */
   transition: transform 0.3s ease-in-out; /* Yumuşak geçiş efekti */
  
 }
 
+.loginContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: black;
+  border-radius: 15px;
+}
+.menuLoginContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-bottom: 50px;
+}
+
 .menuContainer.open {
-  transform: translateX(10%); /* Sağdan içeri kayar */
+  transform: translateX(0%); /* Sağdan içeri kayar */
     background-color: #fff;
 }
 

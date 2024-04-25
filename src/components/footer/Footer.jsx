@@ -11,22 +11,22 @@ const Footer = () => {
       </div>
       <div className={styles.icons}>
         <Link target="blank" href={"https://github.com/nilpeep"}>
-          <Image src="/social.png" width={30} height={30} />
+          <Image alt="github-icon" src="/social.png" width={30} height={30} />
         </Link>
         <Link target="blank" href={"https://medium.com/@niluferk038"}>
-          <Image src="/medium.png" width={30} height={30} />
+          <Image alt="medium-icon" src="/medium.png" width={30} height={30} />
         </Link>
         <Link
           target="blank"
           href={"https://www.linkedin.com/in/nilufer-kaplan/"}
         >
-          <Image src="/linkedin.png" width={30} height={30} />
+          <Image alt="linkedin-icon" src="/linkedin.png" width={30} height={30} />
         </Link>
         <Link
           target="blank"
           href={"https://stackoverflow.com/users/23589727/nilufer-kaplan"}
         >
-          <Image src="/stack-overflow.png" width={30} height={30} />
+          <Image alt="stack-overflow-icon" src="/stack-overflow.png" width={30} height={30} />
         </Link>
       </div>
     </div>

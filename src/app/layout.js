@@ -14,8 +14,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={work_Sans.className}>
+    <html lang="en" suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true} className={work_Sans.className}>
         <ReduxProvider store={store}>
 
         <div className="container">

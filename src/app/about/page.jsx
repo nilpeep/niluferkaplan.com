@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-      <Image className={styles.img} src="/about.png" fill/>
+      <Image alt='nilufer' className={styles.img} src="/about.png" fill/>
       </div>
       <div className={styles.textContainer}>
       <h1 className={styles.title}>

@@ -1,16 +1,17 @@
-"use client"
-import { useState } from 'react';
-import Image from 'next/image';
-import NavLink from './navLink/navLinks';
-import styles from './links.module.css';
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import NavLink from "./navLink/navLinks";
+import styles from "./links.module.css";
+import { useSelector } from "react-redux";
 
 const Links = () => {
   const links = [
-    { name: 'Home', link: '/' },
-    { name: 'About', link: '/about' },
-    { name: 'Contact', link: '/contact' },
-    { name: 'Blog', link: '/blog' },
-    { name: 'Portfolio', link: '/portfolio' },
+    { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
+    { name: "Contact", link: "/contact" },
+    { name: "Blog", link: "/blog" },
+    { name: "Portfolio", link: "/portfolio" },
   ];
 
   const [open, setOpen] = useState(false);
@@ -23,31 +24,56 @@ const Links = () => {
 
   const toggleMenu = (event) => {
     event.stopPropagation(); // Bu tıklama olayının üst elementlere yayılmasını durdur
-    setOpen(prev => !prev);
+    setOpen((prev) => !prev);
   };
+
+  // const user = useSelector(state => state.user.data)
+
+  const user = {
+    username:'nilufer',
+    profilePicture: '/about.png'
+  }
 
   return (
     <div onClick={handleOverlayClick} className={styles.container}>
       <div onClick={(e) => e.stopPropagation()} className={styles.links}>
         {links.map((link, i) => (
-          <NavLink item={link} key={i} />
+          <NavLink key={i} item={link} itemKey={i} />
         ))}
-      </div>
-      <div className={open ? styles.mobileOverlay : ''}>
-      <div className={`${styles.menuContainer} ${open ? styles.open : ''}`} onClick={(e) => e.stopPropagation()}>
-        <Image
-          src="/menu.svg"
-          width={30}
-          height={30}
-          className={styles.menuButton}
-          onClick={toggleMenu}
-        />
-        <div className={`${styles.mobileLinks} ${open ? styles.open : ''}`}>
-          {links.map((link, i) => (
-            <NavLink item={link} key={i} />
-          ))}
+        <div className={styles.loginContainer}>
+        <NavLink item={{name:'',link:'/login'}} itemKey={6} >
+          <Image src={user.profilePicture || '/user.png'} style={{borderRadius:'50%'}} width={60} height={60} />
+          {
+            user.username ? '' : 'Login'
+          }
+        </NavLink>
         </div>
       </div>
+      <div className={open ? styles.mobileOverlay : ""}>
+        <div
+          className={`${styles.menuContainer} ${open ? styles.open : ""}`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <Image
+            alt="menu"
+            src="/menu.svg"
+            width={30}
+            height={30}
+            className={styles.menuButton}
+            onClick={toggleMenu}
+          />
+          <div className={`${styles.mobileLinks} ${open ? styles.open : ""}`}>
+            <div
+              className={styles.menuLoginContainer}
+            >
+              <Image src="/user.png" width={30} height={30} />
+              <p>{user.username || 'Login'}</p><span> &darr;</span>
+            </div>
+            {links.map((link, i) => (
+              <NavLink key={i} item={link} itemKey={i} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
