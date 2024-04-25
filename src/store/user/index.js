@@ -1,7 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  userData: null,
+  data: {
+    id: null,
+    username: "",
+    email: "",
+    profilePicture: "",
+    roles: [], // Kullanıcı rolleri, örneğin ['user', 'admin']
+  },
+  isLoggedIn: false, // Kullanıcı giriş yapmış mı kontrolü
+  isLoading: false, // Asenkron işlemler için yükleme durumu
+  error: null, // Hata mesajlarını tutacak alan
 };
 
 const userSlice = createSlice({
@@ -17,7 +26,6 @@ const userSlice = createSlice({
   },
 });
 
-export default userSlice.reducer
+export default userSlice.reducer;
 
 export const { setUser, clearUser } = userSlice.actions;
-

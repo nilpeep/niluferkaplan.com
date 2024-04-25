@@ -39,7 +39,7 @@ export default function Home() {
             <Image className={styles.img} src="/blueBanner.jpeg" fill={true} />
           </div> */}
         </div>
-        <div className={styles.blogs}>
+        {/* <div className={styles.blogs}>
           <BlogCard
             text={
               "This Resume helped many in getting an interview calls from companies like Google, Microsoft, Amazon, and many more. "
@@ -50,7 +50,7 @@ export default function Home() {
               "This Resume helped many in getting an interview calls from companies like Google, Microsoft, Amazon, and many more. "
             }
           />
-        </div>
+        </div> */}
       </div>
     </>
   );

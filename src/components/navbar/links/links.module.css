@@ -15,13 +15,38 @@
 }
 
 .mobileLinks{
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
 
 }
+
+
+.mobileLinks.open {
+    max-height: calc(100vh - 100px); /* Menünün açıkken alabileceği maksimum yükseklik */
+  }
 
 .menuButton{
     display: none;
 }
+
+.loginButton{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: white;
+    padding: 8px;
+    border: none;
+}
+
+.loginButton:hover{
+    background-color: greenyellow;
+}
+
 
  @media (max-width: 768px) {
     .links{
@@ -39,6 +64,7 @@
         align-items: center;
         gap: 10px;
         background-color: rebeccapurple;
+        transition: max-height 0.5s ease;
     
     }
 
