@@ -16,15 +16,18 @@
   display: none;
 }
 
+.mobileOverlay{
+    display: none;
+}
+
 .mobileLinks {
   position: fixed; /* Pozisyon sabit olmalı */
   top: 0; /* Üstten başlayarak */
   right: 0; /* Sağdan başlayarak */
   width: 300px; /* Menünün genişliği */
   height: 100%; /* Tam ekran boyu */
-  transform: translateX(0); /* Sağdan dışarıda başlar */
+  transform: translateX(100%); /* Sağdan dışarıda başlar */
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Yumuşak geçiş efekti */
-  
   background-color: white;
   opacity: 0;
   display: flex;
@@ -37,6 +40,7 @@
 
 .mobileLinks.open {
    opacity: 1;
+   transform: translate(0%);
 }
 
 
@@ -50,10 +54,12 @@
   height: 100vh; /* Tam ekran yüksekliği */
   transform: translateX(80%); /* Sağdan dışarıda başlar */
   transition: transform 0.3s ease-in-out; /* Yumuşak geçiş efekti */
+ 
 }
 
 .menuContainer.open {
   transform: translateX(10%); /* Sağdan içeri kayar */
+    background-color: #fff;
 }
 
 .loginButton {
@@ -97,8 +103,18 @@
   .menuButton {
     display: block;
     position: absolute; /* Pozisyon sabit */
-    top: 10px; /* Üstten 10px */
+    top: 35px; /* Üstten 10px */
     left: 10px; /* Soldan 10px */
     z-index: 100; /* Z-index ile üstte tutun */
+  }
+
+  .mobileOverlay{
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }

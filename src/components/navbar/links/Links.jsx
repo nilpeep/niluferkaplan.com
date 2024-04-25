@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import NavLink from './navLink/navLinks';
 import styles from './links.module.css';
@@ -15,44 +15,39 @@ const Links = () => {
 
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    // Dış tıklamaları dinlemek için bir fonksiyon
-    const handleOutsideClick = (event) => {
-      // Menü dışında bir yere tıklandığında menüyü kapat
-      if (open && !event.target.closest(`.${styles.menuContainer}`)) {
-        setOpen(false);
-      }
-    };
+  const handleOverlayClick = () => {
+    if (open) {
+      setOpen(false); // Menüyü sadece açık ise kapat
+    }
+  };
 
-    // Etkinlik dinleyicisini belgeye ekle
-    document.addEventListener('click', handleOutsideClick);
-
-    // Temizleme fonksiyonu
-    return () => {
-      document.removeEventListener('click', handleOutsideClick);
-    };
-  }, [open]); // Bağımlılıkları açık state'ine bağla
+  const toggleMenu = (event) => {
+    event.stopPropagation(); // Bu tıklama olayının üst elementlere yayılmasını durdur
+    setOpen(prev => !prev);
+  };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.links}>
+    <div onClick={handleOverlayClick} className={styles.container}>
+      <div onClick={(e) => e.stopPropagation()} className={styles.links}>
         {links.map((link, i) => (
           <NavLink item={link} key={i} />
         ))}
       </div>
+      <div className={open ? styles.mobileOverlay : ''}>
       <div className={`${styles.menuContainer} ${open ? styles.open : ''}`} onClick={(e) => e.stopPropagation()}>
         <Image
           src="/menu.svg"
           width={30}
           height={30}
           className={styles.menuButton}
-          onClick={() => setOpen(prev => !prev)}
+          onClick={toggleMenu}
         />
         <div className={`${styles.mobileLinks} ${open ? styles.open : ''}`}>
           {links.map((link, i) => (
             <NavLink item={link} key={i} />
           ))}
         </div>
+      </div>
       </div>
     </div>
   );
