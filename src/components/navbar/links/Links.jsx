@@ -40,7 +40,7 @@ const Links = () => {
 
   const user = useSelector((state) => state.user.userData);
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   return (
     <>
       <div className={styles.container}>
@@ -50,18 +50,19 @@ const Links = () => {
           ))}
         </div>
 
-        <Image
-          src="/menu.svg"
-          width={30}
-          height={30}
-          className={styles.menuButton}
-          onClick={() => setOpen((prev) => !prev)}
-        />
-
-        <div className={`${styles.mobileLinks} ${open ? styles.open : ""}`}>
-          {links.map((link, i) => (
-            <NavLink item={link} key={i} />
-          ))}
+        <div className={`${styles.menuContainer} ${open ? styles.open : ""}`}>
+          <Image
+            src="/menu.svg"
+            width={30}
+            height={30}
+            className={styles.menuButton}
+            onClick={() => setOpen((prev) => !prev)}
+          />
+          <div className={`${styles.mobileLinks} ${open ? styles.open : ""}`}>
+            {links.map((link, i) => (
+              <NavLink item={link} key={i} />
+            ))}
+          </div>
         </div>
 
         {/* <button onClick={() => store.dispatch(setUser('nilufer'))}>login test</button>
