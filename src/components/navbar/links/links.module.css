@@ -12,8 +12,8 @@
   border-radius: 15px;
 }
 
-.menuButton{
-    display: none;
+.menuButton {
+  display: none;
 }
 
 .mobileLinks {
@@ -22,29 +22,38 @@
   right: 0; /* Sağdan başlayarak */
   width: 300px; /* Menünün genişliği */
   height: 100%; /* Tam ekran boyu */
-  background: white; /* Arka plan rengi */
-  transform: translateX(100%); /* Sağdan dışarıda başlar */
-  transition: transform 0.4s ease-in-out; /* Yumuşak geçiş efekti */
+  transform: translateX(0); /* Sağdan dışarıda başlar */
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Yumuşak geçiş efekti */
+  
+  background-color: white;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  
 }
 
 .mobileLinks.open {
-  transform: translateX(0);
+   opacity: 1;
 }
 
 
+
 .menuContainer {
+  color: black;
   position: fixed; /* Sabit pozisyon */
   top: 0; /* Üstten başlayarak */
   right: 0; /* Sağdan başlayarak */
   width: 300px; /* Menü genişliği */
   height: 100vh; /* Tam ekran yüksekliği */
-  background: transparent; /* Arka plan rengi */
   transform: translateX(80%); /* Sağdan dışarıda başlar */
   transition: transform 0.3s ease-in-out; /* Yumuşak geçiş efekti */
 }
 
 .menuContainer.open {
-  transform: translateX(0); /* Sağdan içeri kayar */
+  transform: translateX(10%); /* Sağdan içeri kayar */
 }
 
 .loginButton {
@@ -67,6 +76,8 @@
   .links {
     display: none;
   }
+
+ 
 
   /* .mobileLinks{
         position: absolute;
