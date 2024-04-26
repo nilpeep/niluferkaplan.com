@@ -27,12 +27,12 @@ const Links = () => {
     setOpen((prev) => !prev);
   };
 
-  // const user = useSelector(state => state.user.data)
+  const user = useSelector(state => state.user.data)
 
-  const user = {
-    username:'nilufer',
-    profilePicture: '/about.png'
-  }
+  // const user = {
+  //   username:'nilufer',
+  //   profilePicture: '/about.png'
+  // }
 
   return (
     <div onClick={handleOverlayClick} className={styles.container}>
@@ -42,10 +42,7 @@ const Links = () => {
         ))}
         <div className={styles.loginContainer}>
         <NavLink item={{name:'',link:'/login'}} itemKey={6} >
-          <Image src={user.profilePicture || '/user.png'} style={{borderRadius:'50%'}} width={60} height={60} />
-          {
-            user.username ? '' : 'Login'
-          }
+          <Image src={user.profilePicture || '/user.png'} style={{borderRadius:'50%'}} width={user.profilePicture ? 60 : 30} height={user.profilePicture ? 60 : 30} />
         </NavLink>
         </div>
       </div>

@@ -1,21 +1,26 @@
 import React from 'react'
+import styles from './login.module.css'
+import ButtonDark from '@/components/button/buttonDark'
+import ButtonLight from '@/components/button/buttonLight'
 
 const LoginPage = () => {
   return (
-    <form >
-      <div>
-        <label htmlFor="name">Name</label>
-        <input id="name" name="name" placeholder="Name" />
-      </div>
-      <div>
+    <form className={styles.form}>
+      <p className={styles.header}>Login</p>
+      <div className={styles.inputContainer}>
         <label htmlFor="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="Email" />
+        <input className={styles.input} id="email" name="email" type="email" placeholder="Email" />
       </div>
-      <div>
+      <div className={styles.inputContainer}>
         <label htmlFor="password">Password</label>
-        <input id="password" name="password" type="password" />
+        <input className={styles.input} id="password" name="password" type="password" placeholder='Password' />
+      <p className={styles.link}>Forget my password</p>
       </div>
-      <button type="submit">Sign Up</button>
+      <ButtonDark text={'login'}/>
+      <div className={styles.actions}>
+      <p>or</p>
+      <p className={styles.link}>You dont have an account?</p>
+      </div>
     </form>
   )
 }
