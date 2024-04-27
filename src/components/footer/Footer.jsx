@@ -9,7 +9,7 @@ const Footer = () => {
       <div className={styles.text}>
         <p>© 2022 Nilufer Kaplan. All rights reserved.</p>
       </div>
-      <div className={styles.icons}>
+      {/* <div className={styles.icons}>
         <Link target="blank" href={"https://github.com/nilpeep"}>
           <Image alt="github-icon" src="/social.png" width={30} height={30} />
         </Link>
@@ -28,7 +28,7 @@ const Footer = () => {
         >
           <Image alt="stack-overflow-icon" src="/stack-overflow.png" width={30} height={30} />
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };

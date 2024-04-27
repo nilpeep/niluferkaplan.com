@@ -1,53 +1,50 @@
-// server.js
+"use strict"
+/* -------------------------------------------------------
+    EXPRESSJS - BLOG Project with Mongoose
+------------------------------------------------------- */
+/*
+ * $ npm init -y
+ * $ npm i express dotenv express-async-errors
+ * $ npm i mongoose
+*/
+
 const express = require('express')
 const app = express()
 
-const cors = require('cors')
-
-
 require('dotenv').config()
-const HOST = process.env?.HOST || '127.0.0.1'
-const PORT = process.env?.PORT || 8000
+const PORT = process.env.PORT || 8000
 
-
-
-// asyncErrors to errorHandler:
-require('express-async-errors')
-
-// db connection
-
-const { dbConnection } = require('./src/configs/dbConnection')
-
-dbConnection()
-
-app.all('/', (req, res) => {
-    res.send({
-        error: false,
-        message: 'Welcome to My Blog Website',
-        documents: {
-            swagger: '/documents/swagger',
-            redoc: '/documents/redoc',
-            json: '/documents/json',
-        },
-        user: req.user
-    })
-})
-
-// Accept JSON:
+/* ------------------------------------------------------- */
+// SessionCookies:
+// http://expressjs.com/en/resources/middleware/cookie-session.html
+// https://www.npmjs.com/package/cookie-session
+//* $ npm i cookie-session
+const session = require("cookie-session")
+app.use(session({ secret: process.env.SECRET_KEY || 'secret_keys_for_cookies' }))
+/* ------------------------------------------------------- */
+// Accept json data & convert to object:
 app.use(express.json())
 
-//
+// Connect to MongoDB with Mongoose:
+require('./src/dbConnection')
 
-app.use(cors());
+// Searching&Sorting&Pagination:
+app.use(require('./src/middlewares/findSearchSortPage'))
 
-//? router:
+// HomePage:
+app.all('/', (req, res) => {
+    res.send('WELCOME TO BLOG API')
+})
 
-app.use(require('./src/routes'))
+// Routes:
+app.use('/user', require('./src/routes/userRoute'))
+app.use('/blog', require('./src/routes/blogRoute'))
 
-//? error handler:
+/* ------------------------------------------------------- */
+// Synchronization:
+// require('./src/sync')()
 
-app.use(require('./src/middlewares/errorHandler'))
+// errorHandler:
+app.use(require('./src/errorHandler'))
 
-app.listen(PORT, HOST, () => console.log(`server running at http://${HOST}:${PORT}`))
-
-
+app.listen(PORT, () => console.log('Running: http://127.0.0.1:' + PORT))

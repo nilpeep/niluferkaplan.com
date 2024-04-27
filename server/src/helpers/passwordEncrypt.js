@@ -1,15 +1,18 @@
 "use strict"
 /* -------------------------------------------------------
-    NODEJS EXPRESS | CLARUSWAY FullStack Team
+    EXPRESSJS - BLOG Project with Mongoose
 ------------------------------------------------------- */
-// passwordEncrypt(password:string):
+// Password Encrypt:
+// https://nodejs.org/api/crypto.html#cryptopbkdf2syncpassword-salt-iterations-keylen-digest
+const crypto = require('node:crypto')
 
-const { pbkdf2Sync } = require('node:crypto'),
-    keyCode = process.env.SECRET_KEY,
-    loopCount = 1000,
-    charCount = 32,
-    encType = 'sha512';
+const keyCode = process.env.SECRET_KEY || 'write_random_chars_to_here'
+const loopCount = 10_000
+const charsCount = 32 // write 32 for 64
+const encType = 'sha512'
 
 module.exports = function (password) {
-    return pbkdf2Sync(password, keyCode, loopCount, charCount, encType).toString('hex')
+
+    const encode = crypto.pbkdf2Sync(password, keyCode, loopCount, charsCount, encType) // return BufferType
+    return encode.toString('hex')
 }
