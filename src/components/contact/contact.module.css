@@ -7,6 +7,26 @@
   color: black;
 }
 
+.form input{
+  border: none;
+    display: block;
+    background-color: rgb(237, 237, 237);
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.form textarea{
+  border: none;
+    display: block;
+    background-color: rgb(237, 237, 237);
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 200px;
+    resize: none;
+}
+
 .closeButton{
   position: absolute;
   top: 20px;
@@ -17,3 +37,21 @@
 .closeButton:hover{
   background-color: rgba(0, 0, 0, 0.192);
 }
+
+
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.header .img{
+  border-radius: 50%;
+}
+
+.header .text{
+
+}
+
