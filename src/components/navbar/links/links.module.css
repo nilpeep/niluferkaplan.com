@@ -16,48 +16,38 @@
   display: none;
 }
 
-.mobileOverlay{
-    display: none;
-}
+/* .mobileOverlay {
+  display: none;
+} */
 
-.mobileLinks {
-  position: fixed; /* Pozisyon sabit olmalı */
-  top: 0; /* Üstten başlayarak */
-  right: 0; /* Sağdan başlayarak */
-  width: 300px; /* Menünün genişliği */
-  height: 100%; /* Tam ekran boyu */
-  transform: translateX(100%); /* Sağdan dışarıda başlar */
-  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Yumuşak geçiş efekti */
-  background-color: white;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
-  
-}
+/* .mobileLinks {
+  display: none;
+} */
 
 .mobileLinks.open {
-   opacity: 1;
-   transform: translate(0%);
+  opacity: 1;
+  transform: translate(0%);
 }
-
-
 
 .menuContainer {
-  color: black;
-  position: fixed; 
-  top: 0;
-  right: 50px; /* Sağdan başlayarak */
-  width: 300px; /* Menü genişliği */
-  height:100vh; /* Tam ekran yüksekliği */
-  transform: translateX(100%); /* Sağdan dışarıda başlar */
-  transition: transform 0.3s ease-in-out; /* Yumuşak geçiş efekti */
- 
+  display: none;
 }
 
-.loginContainer{
+.menuContainer.open {
+  transform: translateX(20%); /* Sağdan içeri kayar */
+  background-color: #fff;
+  display: block;
+  color: black;
+    position: fixed;
+    top: 0;
+    right: 50px; /* Sağdan başlayarak */
+    width: 300px; /* Menü genişliği */
+    height: 100vh; /* Tam ekran yüksekliği */
+    transform: translateX(100%); /* Sağdan dışarıda başlar */
+    transition: transform 0.3s ease-in-out; /* Yumuşak geçiş efekti */
+}
+
+.loginContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,17 +55,12 @@
   color: black;
   border-radius: 15px;
 }
-.menuLoginContainer{
+.menuLoginContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   padding-bottom: 50px;
-}
-
-.menuContainer.open {
-  transform: translateX(20%); /* Sağdan içeri kayar */
-    background-color: #fff;
 }
 
 .loginButton {
@@ -99,22 +84,22 @@
     display: none;
   }
 
- 
-
-  /* .mobileLinks{
-        position: absolute;
-        top: 100px;
-        right: 0;
-        width: 50%;
-        height: calc(100vh - 100px);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        background-color: rebeccapurple;
-        transition: max-height 0.5s ease;
-    
-    } */
+  .mobileLinks {
+    position: fixed; /* Pozisyon sabit olmalı */
+    top: 0; /* Üstten başlayarak */
+    right: 0; /* Sağdan başlayarak */
+    width: 300px; /* Menünün genişliği */
+    height: 100%; /* Tam ekran boyu */
+    transform: translateX(100%); /* Sağdan dışarıda başlar */
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Yumuşak geçiş efekti */
+    background-color: white;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  } 
 
   .menuButton {
     display: block;
@@ -124,7 +109,7 @@
     z-index: 100; /* Z-index ile üstte tutun */
   }
 
-  .mobileOverlay{
+  .mobileOverlay {
     display: block;
     position: absolute;
     height: 100vh;
@@ -134,4 +119,6 @@
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
   }
+
+  
 }

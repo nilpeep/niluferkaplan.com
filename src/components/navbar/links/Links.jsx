@@ -46,19 +46,19 @@ const Links = () => {
         </NavLink>
         </div>
       </div>
+        <Image
+          alt="menu"
+          src="/menu.svg"
+          width={30}
+          height={30}
+          className={styles.menuButton}
+          onClick={toggleMenu}
+        />
       <div className={open ? styles.mobileOverlay : ""}>
         <div
           className={`${styles.menuContainer} ${open ? styles.open : ""}`}
           onClick={(e) => e.stopPropagation()}
         >
-          <Image
-            alt="menu"
-            src="/menu.svg"
-            width={30}
-            height={30}
-            className={styles.menuButton}
-            onClick={toggleMenu}
-          />
           <div className={`${styles.mobileLinks} ${open ? styles.open : ""}`}>
             <div
               className={styles.menuLoginContainer}
