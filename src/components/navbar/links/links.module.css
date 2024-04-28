@@ -47,12 +47,12 @@
 
 .menuContainer {
   color: black;
-  position: fixed; /* Sabit pozisyon */
-  top: 0; /* Üstten başlayarak */
-  right: 0; /* Sağdan başlayarak */
+  position: fixed; 
+  top: 0;
+  right: 50px; /* Sağdan başlayarak */
   width: 300px; /* Menü genişliği */
-  height: 100vh; /* Tam ekran yüksekliği */
-  transform: translateX(75%); /* Sağdan dışarıda başlar */
+  height:100vh; /* Tam ekran yüksekliği */
+  transform: translateX(100%); /* Sağdan dışarıda başlar */
   transition: transform 0.3s ease-in-out; /* Yumuşak geçiş efekti */
  
 }
@@ -74,7 +74,7 @@
 }
 
 .menuContainer.open {
-  transform: translateX(0%); /* Sağdan içeri kayar */
+  transform: translateX(20%); /* Sağdan içeri kayar */
     background-color: #fff;
 }
 
@@ -126,7 +126,8 @@
 
   .mobileOverlay{
     display: block;
-    position: fixed;
+    position: absolute;
+    height: 100vh;
     top: 0;
     right: 0;
     bottom: 0;

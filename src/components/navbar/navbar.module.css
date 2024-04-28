@@ -4,6 +4,17 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
+    width: 100%;
+    /* position: fixed; 
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%); */
+    /* position: fixed;
+    top: 0; */
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.001);
+    backdrop-filter: blur(10px);
+   
 }
 
 .logo{
@@ -14,7 +25,8 @@
     .container{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     }
 }
+
 

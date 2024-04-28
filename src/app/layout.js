@@ -4,6 +4,8 @@ import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import { ReduxProvider } from "@/store";
 import store from "@/store";
+import styles from './layout.module.css'
+
 
 const work_Sans = Work_Sans({ subsets: ["latin"] });
 
@@ -17,10 +19,13 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning={true}>
       <body suppressHydrationWarning={true} className={work_Sans.className}>
         <ReduxProvider store={store}>
-
-        <div className="container">
+        <div className={styles.container}>
+          <div className={styles.navbar}>
           <Navbar />
+          </div>
+          <div className={styles.children}>
           {children}
+          </div>
           <Footer />
         </div>
         </ReduxProvider>
