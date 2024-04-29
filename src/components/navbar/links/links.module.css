@@ -34,17 +34,15 @@
 }
 
 .menuContainer.open {
-  transform: translateX(20%); /* Sağdan içeri kayar */
+
   background-color: #fff;
   display: block;
   color: black;
-    position: fixed;
-    top: 0;
-    right: 50px; /* Sağdan başlayarak */
-    width: 300px; /* Menü genişliği */
-    height: 100vh; /* Tam ekran yüksekliği */
-    transform: translateX(100%); /* Sağdan dışarıda başlar */
-    transition: transform 0.3s ease-in-out; /* Yumuşak geçiş efekti */
+  position: fixed;
+  top: 0;
+  right: 0; /* Sağdan başlayarak */
+  width: 70%; /* Menü genişliği */
+  height: 100vh; /* Tam ekran yüksekliği */
 }
 
 .loginContainer {
@@ -99,14 +97,19 @@
     justify-content: center;
     flex-direction: column;
     gap: 10px;
-  } 
+    display: none;
+  }
 
   .menuButton {
     display: block;
     position: absolute; /* Pozisyon sabit */
     top: 35px; /* Üstten 10px */
-    left: 10px; /* Soldan 10px */
+    right: 10px; /* Soldan 10px */
     z-index: 100; /* Z-index ile üstte tutun */
+  }
+
+  .menuButton.open{
+    right: 200px;
   }
 
   .mobileOverlay {
@@ -119,6 +122,4 @@
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
   }
-
-  
 }

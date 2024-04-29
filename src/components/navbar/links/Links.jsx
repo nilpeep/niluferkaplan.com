@@ -51,7 +51,7 @@ const Links = () => {
           src="/menu.svg"
           width={30}
           height={30}
-          className={styles.menuButton}
+          className={`${styles.menuButton} ${open ? styles.open : ""}`}
           onClick={toggleMenu}
         />
       <div className={open ? styles.mobileOverlay : ""}>
