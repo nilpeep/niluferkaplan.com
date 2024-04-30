@@ -7,8 +7,16 @@
     border-radius: 8px;
 }
 
+.error{
+    color: red;
+    font-size: 12px;
+}
+
 .header{
-    font-weight: 700;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
     font-size: larger;
 }
 
@@ -24,11 +32,19 @@
     background-color: white;
     color: black;
     padding: 50px;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     gap: 20px;
     border-radius: 8px;
+    font-size: .875rem;
 }
+.checkbox {
+    -webkit-appearance: checkbox;
+       -moz-appearance: checkbox;
+            appearance: checkbox;
+    display: inline-block;
+    width: auto;
+  }
 
 .actions{
     text-align: center;
@@ -36,7 +52,6 @@
 .link{
     color: rgb(123, 0, 255);
     cursor: pointer;
-    font-size: 12px;
     padding-top: 5px;
 }
 
