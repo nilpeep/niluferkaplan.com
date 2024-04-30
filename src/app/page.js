@@ -17,8 +17,7 @@ export default function Home() {
   return (
     <>
       <div className={styles.container}>
-        home page
-        {/* <div className={styles.about}>
+        <div className={styles.about}>
           <div className={styles.textContainer}>
             <h1 className={styles.title}>Software developer.</h1>
             <p className={styles.description}>
@@ -35,11 +34,11 @@ export default function Home() {
                 <p>This is the modal content!</p>
               </ContactModal>
             </div>
-          </div> */}
+          </div>
           {/* <div className={styles.imgContainer}>
             <Image className={styles.img} src="/blueBanner.jpeg" fill={true} />
           </div> */}
-        {/* </div> */}
+        </div>
         {/* <div className={styles.blogs}>
           <BlogCard
             text={

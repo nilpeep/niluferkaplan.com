@@ -59,7 +59,7 @@
 .mobileLinks {
   top: 0; /* Üstten başlayarak */
   right: 0; /* Sağdan başlayarak */
-  width: 300px; /* Menünün genişliği */
+  width: 100%; /* Menünün genişliği */
   height: 100%; /* Tam ekran boyu */
   transform: translateX(100%); /* Sağdan dışarıda başlar */
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Yumuşak geçiş efekti */
@@ -120,7 +120,7 @@
   }
 
   .menuButton.open{
-    right: 200px;
+    right: 60%;
   }
 
   

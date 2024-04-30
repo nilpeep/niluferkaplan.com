@@ -14,9 +14,7 @@
 }
 
 body{
-    background-color: #FBDA61;
-background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
-
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 
     color: var(--text);
 }
@@ -29,9 +27,6 @@ a{
 
 .container{
     background-color: transparent;
-
-
-
     width: 1536px;
     margin: auto;
     padding-left: 50px;
