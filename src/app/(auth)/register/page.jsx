@@ -5,7 +5,7 @@ import React from 'react'
 
 const Register = () => {
   return (
-    <div>
+    <div style={{display:'flex', justifyContent:"center",alignItems:'center'}}>
         <RegisterCard/>
     </div>
   )
