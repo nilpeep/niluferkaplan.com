@@ -22,7 +22,7 @@ const LoginForm = () => (
   <div>
     
     <Formik
-      initialValues={{firstname:'',lastname:'',username:'', email: '', password: '' }}
+      initialValues={{username:'', email: '', password: '' }}
       validationSchema={LoginSchema}
       onSubmit={(values, { setSubmitting }) => {
         console.log(values)
@@ -32,7 +32,7 @@ const LoginForm = () => (
         
         <Form className={styles.form}>
           <div className={styles.header}>
-          <Image src='/user.png' width={50} height={50}/>
+          <Image alt='user' src='/user.png' width={50} height={50}/>
           <p >Register</p>
           </div>
           <div>

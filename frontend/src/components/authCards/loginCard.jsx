@@ -32,7 +32,7 @@ const LoginForm = () => (
         
         <Form className={styles.form}>
           <div className={styles.header}>
-          <Image src='/user.png' width={50} height={50}/>
+          <Image alt='user' src='/user.png' width={50} height={50}/>
           <p >Login</p>
           </div>
           <div>
