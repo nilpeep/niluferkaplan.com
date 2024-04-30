@@ -1,3 +1,13 @@
+
+.container{
+  margin: 100px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  width: 700px;
+}
+
 .form {
   display: flex;
   /* align-items: center; */
@@ -42,12 +52,27 @@
 
 .header{
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 20px;
 }
 
 .header .img{
   border-radius: 50%;
+}
+
+@media (max-width: 1024px){
+  .container{
+      width: 668px;
+  }
+}
+@media (max-width: 768px){
+  .container{
+      width: 540px;
+  }
+}
+@media (max-width: 640px){
+  .container{
+      width: 400px;
+  }
 }
 

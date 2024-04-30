@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning={true} className={work_Sans.className}>
         <ReduxProvider store={store}>
         <div className="container">
-          <div>
+          <div className="children">
           <Navbar />
           </div>
           <div >

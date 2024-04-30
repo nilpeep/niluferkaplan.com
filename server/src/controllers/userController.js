@@ -82,6 +82,7 @@ module.exports.User = {
             // const user = await User.findOne({ email: email, password: passwordEncrypt(password) })
             // No need passwordEncrypt, because using "set" in model:
             const user = await User.findOne({ email: email, password: password })
+            console.log(req.body.rememberMe)
             if (user) {
 
                 // Set Session:

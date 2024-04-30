@@ -2,12 +2,28 @@
   background-color: #fff;
   position: relative;
   border-radius: 8px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 .header{
   padding: 10px;
   display: flex;
   gap: 10px;
+}
+
+.imgContainer{
+  width: 90%;
+  height: 300px;
+  position: relative;
+}
+
+.img{
+  object-fit: cover;
 }
 
 .userPhoto{
@@ -38,7 +54,7 @@
 
 .postSection{
   font-size: small;
-  padding: 10px;
+
   display: flex;
   gap: 10px;
   align-items: center;

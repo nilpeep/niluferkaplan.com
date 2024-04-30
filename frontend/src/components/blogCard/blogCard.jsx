@@ -44,14 +44,15 @@ const BlogCard = ({ text, maxLength = 70 }) => {
               </div>
             )}
           </div>
-          <div>
-            
-          </div>
         </div>
 
-        {
+        {/* {
           showFullText ? <Image src='/resumeExample.webp' width={200} height={300}/> : ''
-        }
+        } */}
+
+        <div className={styles.imgContainer}>
+        <Image className={styles.img} src='/resumeExample.webp' fill />
+        </div>
      
        
       </div>

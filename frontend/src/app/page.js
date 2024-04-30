@@ -30,27 +30,11 @@ export default function Home() {
               <ButtonLight text={"Learn More"} />
             </div>
             <div>
-              <ContactModal isOpen={isModalOpen} onClose={closeModal}>
-                <p>This is the modal content!</p>
-              </ContactModal>
+              <ContactModal isOpen={isModalOpen} onClose={closeModal} />
             </div>
           </div>
-          {/* <div className={styles.imgContainer}>
-            <Image className={styles.img} src="/blueBanner.jpeg" fill={true} />
-          </div> */}
         </div>
-        {/* <div className={styles.blogs}>
-          <BlogCard
-            text={
-              "This Resume helped many in getting an interview calls from companies like Google, Microsoft, Amazon, and many more. "
-            }
-          />
-          <BlogCard
-            text={
-              "This Resume helped many in getting an interview calls from companies like Google, Microsoft, Amazon, and many more. "
-            }
-          />
-        </div> */}
+      
       </div>
     </>
   );
