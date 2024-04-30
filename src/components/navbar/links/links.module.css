@@ -24,6 +24,17 @@
   display: none;
 } */
 
+.mobileOverlay {
+  display: block;
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .mobileLinks.open {
   opacity: 1;
   transform: translate(0%);
@@ -43,6 +54,22 @@
   right: 0; /* Sağdan başlayarak */
   width: 70%; /* Menü genişliği */
   height: 100vh; /* Tam ekran yüksekliği */
+}
+
+.mobileLinks {
+  top: 0; /* Üstten başlayarak */
+  right: 0; /* Sağdan başlayarak */
+  width: 300px; /* Menünün genişliği */
+  height: 100%; /* Tam ekran boyu */
+  transform: translateX(100%); /* Sağdan dışarıda başlar */
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Yumuşak geçiş efekti */
+  background-color: white;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .loginContainer {
@@ -82,29 +109,13 @@
     display: none;
   }
 
-  .mobileLinks {
-    position: fixed; /* Pozisyon sabit olmalı */
-    top: 0; /* Üstten başlayarak */
-    right: 0; /* Sağdan başlayarak */
-    width: 300px; /* Menünün genişliği */
-    height: 100%; /* Tam ekran boyu */
-    transform: translateX(100%); /* Sağdan dışarıda başlar */
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Yumuşak geçiş efekti */
-    background-color: white;
-    opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-    display: none;
-  }
+  
 
   .menuButton {
     display: block;
     position: absolute; /* Pozisyon sabit */
     top: 35px; /* Üstten 10px */
-    right: 10px; /* Soldan 10px */
+    right: 20px; /* Soldan 10px */
     z-index: 100; /* Z-index ile üstte tutun */
   }
 
@@ -112,14 +123,5 @@
     right: 200px;
   }
 
-  .mobileOverlay {
-    display: block;
-    position: absolute;
-    height: 100vh;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+  
 }
