@@ -16,7 +16,7 @@ const BlogCard = ({ text, maxLength = 70 }) => {
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.userPhoto}>
-            <Image src="/about.png" fill />
+            <Image alt="me" src="/about.png" fill  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
           </div>
           <div className={styles.userInfo}>
             <div className={styles.userName}>
@@ -51,7 +51,7 @@ const BlogCard = ({ text, maxLength = 70 }) => {
         } */}
 
         <div className={styles.imgContainer}>
-        <Image className={styles.img} src='/resumeExample.webp' fill />
+        <Image alt="resume" className={styles.img} src='/resumeExample.webp' fill />
         </div>
      
        
