@@ -9,23 +9,43 @@ import Link from "next/link";
 
 // Form doğrulama şeması
 const LoginSchema = Yup.object().shape({
-  email: Yup.string().email("Unvalid email").required("email is required"),
+  email: Yup.string().required("email is required"),
   password: Yup.string().required("password is required"),
 });
 
 const LoginForm = () => {
-  const handleSubmit = async () => {
-    fetch("https://dummyjson.com/auth/login", {
+  // const handleSubmit = async (values) => {
+  //   fetch("https://dummyjson.com/auth/login", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(values),
+  //     // username: "kminchelle",
+  //     // password: "0lelplR",
+  //     // expiresInMins: 30, // optional, defaults to 60
+  //   })
+  //     .then((res) => res.json())
+  //     .then((res) => console.log(res));
+  // };
+
+  const getData = async (values) => {
+    const res = await fetch("http://127.0.0.1:8000/user/login", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: "kminchelle",
-        password: "0lelplR",
-        expiresInMins: 30, // optional, defaults to 60
-      }),
-    })
-      .then((res) => res.json())
-      .then(console.log);
+      body: JSON.stringify(values),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+
+    if (!res.ok) {
+      throw new Error("smt went wrong");
+    }
+
+    return res.json();
+  };
+
+  const handleSubmit = async (values) => {
+    const users = await getData(values);
+    console.log(users);
   };
 
   return (
@@ -34,7 +54,7 @@ const LoginForm = () => {
         initialValues={{ email: "", password: "" }}
         validationSchema={LoginSchema}
         onSubmit={(values, { setSubmitting }) => {
-          console.log("clicked");
+          handleSubmit(values);
         }}
       >
         {({ isSubmitting }) => (
@@ -46,7 +66,6 @@ const LoginForm = () => {
             <div>
               <Field
                 className={styles.input}
-                type="email"
                 name="email"
                 placeholder="Email"
               />
