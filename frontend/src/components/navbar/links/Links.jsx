@@ -42,7 +42,8 @@ const Links = () => {
         ))}
         <div className={styles.loginContainer}>
         <NavLink item={{name:'',link:'/login'}} itemKey={6} >
-          <Image src={user.profilePicture || '/user.png'} style={{borderRadius:'50%'}} width={user.profilePicture ? 60 : 30} height={user.profilePicture ? 60 : 30} />
+          {/* <Image src={user.profilePicture || '/user.png'} style={{borderRadius:'50%'}} width={user.profilePicture ? 60 : 30} height={user.profilePicture ? 60 : 30} /> */}
+          <p>{user.email || 'log in'}</p>
         </NavLink>
         </div>
       </div>

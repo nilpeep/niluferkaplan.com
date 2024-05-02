@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import Image from "next/image";
 import ButtonDark from "../button/buttonDark";
 import Link from "next/link";
-// import useAuthCalls from '@/services/useAuthCalls';
+import useAuthCalls from '@/services/useAuthCalls';
 
 // Form doğrulama şeması
 const LoginSchema = Yup.object().shape({
@@ -13,39 +13,14 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().required("password is required"),
 });
 
+
 const LoginForm = () => {
-  // const handleSubmit = async (values) => {
-  //   fetch("https://dummyjson.com/auth/login", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(values),
-  //     // username: "kminchelle",
-  //     // password: "0lelplR",
-  //     // expiresInMins: 30, // optional, defaults to 60
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => console.log(res));
-  // };
+  const {login} = useAuthCalls()
 
-  const getData = async (values) => {
-    const res = await fetch("http://127.0.0.1:8000/user/login", {
-      method: "POST",
-      body: JSON.stringify(values),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
-
-    if (!res.ok) {
-      throw new Error("smt went wrong");
-    }
-
-    return res.json();
-  };
 
   const handleSubmit = async (values) => {
-    const users = await getData(values);
-    console.log(users);
+    console.log(values)
+    const user = await login(values)
   };
 
   return (
