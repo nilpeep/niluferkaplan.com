@@ -27,7 +27,7 @@ const Links = () => {
     setOpen((prev) => !prev);
   };
 
-  const user = useSelector(state => state.user.data)
+  const user = useSelector(state => state.auth.user)
 
   // const user = {
   //   username:'nilufer',
@@ -63,7 +63,7 @@ const Links = () => {
             <div
               className={styles.menuLoginContainer}
             >
-              <Image src="/user.png" width={30} height={30} />
+              <Image alt="user" src="/user.png" width={30} height={30} />
               <p>{user.username || 'Login'}</p><span> &darr;</span>
             </div>
             {links.map((link, i) => (

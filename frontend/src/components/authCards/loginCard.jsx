@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import Image from 'next/image';
 import ButtonDark from '../button/buttonDark';
 import Link from 'next/link';
+import useAuthCalls from '@/services/useAuthCalls';
 
 // Form doğrulama şeması
 const LoginSchema = Yup.object().shape({
@@ -15,17 +16,19 @@ const LoginSchema = Yup.object().shape({
     .required('password is required'),
 });
 
-const LoginForm = () => (
+const {login} = useAuthCalls()
+
+const LoginForm = () => {
+  return(
+
+  
   <div>
     
     <Formik
       initialValues={{ email: '', password: '' }}
       validationSchema={LoginSchema}
       onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+       login(values)
       }}
     >
       {({ isSubmitting }) => (
@@ -55,6 +58,7 @@ const LoginForm = () => (
       )}
     </Formik>
   </div>
-);
+  )
+};
 
 export default LoginForm;

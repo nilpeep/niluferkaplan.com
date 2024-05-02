@@ -2,11 +2,11 @@
 
 import { Provider } from "react-redux"
 import {configureStore} from "@reduxjs/toolkit"
-import user from "./user/index.js"
+import auth from "./auth/index.js"
 
 const store = configureStore({
     reducer: {
-        user
+        auth
     }
 })
 
