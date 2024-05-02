@@ -1,64 +1,93 @@
-'use client'
-import styles from './loginCard.module.css'
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import Image from 'next/image';
-import ButtonDark from '../button/buttonDark';
-import Link from 'next/link';
-import useAuthCalls from '@/services/useAuthCalls';
+"use client";
+import styles from "./loginCard.module.css";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import Image from "next/image";
+import ButtonDark from "../button/buttonDark";
+import Link from "next/link";
+// import useAuthCalls from '@/services/useAuthCalls';
 
 // Form doğrulama şeması
 const LoginSchema = Yup.object().shape({
-  email: Yup.string()
-    .email('Unvalid email')
-    .required('email is required'),
-  password: Yup.string()
-    .required('password is required'),
+  email: Yup.string().email("Unvalid email").required("email is required"),
+  password: Yup.string().required("password is required"),
 });
 
-const {login} = useAuthCalls()
-
 const LoginForm = () => {
-  return(
+  const handleSubmit = async () => {
+    fetch("https://dummyjson.com/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: "kminchelle",
+        password: "0lelplR",
+        expiresInMins: 30, // optional, defaults to 60
+      }),
+    })
+      .then((res) => res.json())
+      .then(console.log);
+  };
 
-  
-  <div>
-    
-    <Formik
-      initialValues={{ email: '', password: '' }}
-      validationSchema={LoginSchema}
-      onSubmit={(values, { setSubmitting }) => {
-       login(values)
-      }}
-    >
-      {({ isSubmitting }) => (
-        
-        <Form className={styles.form}>
-          <div className={styles.header}>
-          <Image alt='user' src='/user.png' width={50} height={50}/>
-          <p >Login</p>
-          </div>
-          <div>
-          <Field className={styles.input} type="email" name="email" placeholder="Email" />
-          <ErrorMessage className={styles.error} name="email" component="div" />
-          </div>
-          <div>
-          <Field className={styles.input} type="password" name="password" placeholder="Şifre" />
-          <ErrorMessage className={styles.error} name="password" component="div" />
-          </div>
-          <div >
-          <input type='checkbox' />
-          <label htmlFor=""> Remember me</label>
-          </div>
-          <button style={{border:'none', background:'none'}} type="submit" disabled={isSubmitting}>
-            <ButtonDark text={'login'}/>
-          </button>
-          <Link href='/register' className={styles.link}>I dont have an account</Link>
-        </Form>
-      )}
-    </Formik>
-  </div>
-  )
+  return (
+    <div>
+      <Formik
+        initialValues={{ email: "", password: "" }}
+        validationSchema={LoginSchema}
+        onSubmit={(values, { setSubmitting }) => {
+          console.log("clicked");
+        }}
+      >
+        {({ isSubmitting }) => (
+          <Form className={styles.form}>
+            <div className={styles.header}>
+              <Image alt="user" src="/user.png" width={50} height={50} />
+              <p>Login</p>
+            </div>
+            <div>
+              <Field
+                className={styles.input}
+                type="email"
+                name="email"
+                placeholder="Email"
+              />
+              <ErrorMessage
+                className={styles.error}
+                name="email"
+                component="div"
+              />
+            </div>
+            <div>
+              <Field
+                className={styles.input}
+                type="password"
+                name="password"
+                placeholder="Şifre"
+              />
+              <ErrorMessage
+                className={styles.error}
+                name="password"
+                component="div"
+              />
+            </div>
+            <div>
+              <input type="checkbox" />
+              <label htmlFor=""> Remember me</label>
+            </div>
+            <button
+              style={{ border: "none", background: "none" }}
+              type="submit"
+              disabled={isSubmitting}
+            >
+              <ButtonDark text={"login"} />
+            </button>
+            <Link href="/register" className={styles.link}>
+              I dont have an account
+            </Link>
+          </Form>
+        )}
+      </Formik>
+    </div>
+  );
 };
 
 export default LoginForm;

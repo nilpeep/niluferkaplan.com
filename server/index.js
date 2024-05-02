@@ -14,6 +14,14 @@ const app = express()
 require('dotenv').config()
 const PORT = process.env.PORT || 8000
 
+const cors = require('cors')
+const corsOption = {
+    origin: ['http://localhost:3000'],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+}
+app.use(cors(corsOption));
+
 /* ------------------------------------------------------- */
 // SessionCookies:
 // http://expressjs.com/en/resources/middleware/cookie-session.html
