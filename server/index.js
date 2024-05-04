@@ -28,7 +28,7 @@ app.use(cors(corsOption));
 // https://www.npmjs.com/package/cookie-session
 //* $ npm i cookie-session
 const session = require("cookie-session")
-app.use(session({ secret: process.env.SECRET_KEY || 'secret_keys_for_cookies' }))
+app.use(session({ secret: process.env.SECRET_KEY || 'secret_keys_for_cookies'}))
 /* ------------------------------------------------------- */
 // Accept json data & convert to object:
 app.use(express.json())

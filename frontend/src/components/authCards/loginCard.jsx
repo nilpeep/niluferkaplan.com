@@ -5,31 +5,31 @@ import * as Yup from "yup";
 import Image from "next/image";
 import ButtonDark from "../button/buttonDark";
 import Link from "next/link";
-import useAuthCalls from '@/services/useAuthCalls';
+import useAuthCalls from "@/services/useAuthCalls";
 
 // Form doğrulama şeması
 const LoginSchema = Yup.object().shape({
   email: Yup.string().required("email is required"),
   password: Yup.string().required("password is required"),
+  rememberMe: Yup.boolean(),
 });
 
-
 const LoginForm = () => {
-  const {login} = useAuthCalls()
-
+  const { login } = useAuthCalls();
 
   const handleSubmit = async (values) => {
-    console.log(values)
-    const user = await login(values)
+    console.log(values);
+    const user = await login(values);
   };
 
   return (
     <div>
       <Formik
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ email: "", password: "", rememberMe: false }}
         validationSchema={LoginSchema}
         onSubmit={(values, { setSubmitting }) => {
           handleSubmit(values);
+          setSubmitting(false);
         }}
       >
         {({ isSubmitting }) => (
@@ -64,8 +64,10 @@ const LoginForm = () => {
               />
             </div>
             <div>
-              <input type="checkbox" />
-              <label htmlFor=""> Remember me</label>
+              <label htmlFor="">
+                <Field type="checkbox" name="rememberMe"></Field>
+                Remember me
+              </label>
             </div>
             <button
               style={{ border: "none", background: "none" }}
