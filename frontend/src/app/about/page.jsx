@@ -10,7 +10,7 @@ const AboutPage = () => {
       </div>
       <div className={styles.textContainer}>
       <h1 className={styles.title}>
-      Hi there, It's Nilufer. You can call me Nil.
+      Hi there, It&apos;s Nilufer. You can call me Nil.
       </h1>
       <p>
         
