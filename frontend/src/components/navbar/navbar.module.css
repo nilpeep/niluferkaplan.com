@@ -23,7 +23,6 @@
 
 .logo{
     cursor: pointer;
-    margin-top: 70px;
 }
 
 @media (max-width: 768px) {

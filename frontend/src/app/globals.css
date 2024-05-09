@@ -1,8 +1,8 @@
 :root{
     --bg: #0624FE;
     --bgSoft: hsl(245, 21%, 21%);
-    --text: white;
-    --textSoft: #e5e5e5;
+    --text: black;
+    --textSoft: rgba(0, 0, 0, 0.54);
     --btn: #3673fd;
 
 }

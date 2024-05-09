@@ -43,9 +43,9 @@ const Navbar = () => {
         <Image
           alt="logo"
           className={`${styles.logo}`}
-          src="/logo.png"
-          width={200}
-          height={200}
+          src="/lillyLogo.png"
+          width={100}
+          height={100}
         />
       </Link>
       <Links />
