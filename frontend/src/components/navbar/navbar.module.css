@@ -2,7 +2,7 @@
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     gap: 20px;
     width: 100%;
     position: fixed; 
@@ -23,6 +23,7 @@
 
 .logo{
     cursor: pointer;
+    margin-top: 70px;
 }
 
 @media (max-width: 768px) {
