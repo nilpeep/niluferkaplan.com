@@ -43,7 +43,7 @@ const Navbar = () => {
         <Image
           alt="logo"
           className={`${styles.logo}`}
-          src="/lillyLogo.png"
+          src="/logo.png"
           width={100}
           height={100}
         />
