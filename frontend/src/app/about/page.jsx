@@ -6,11 +6,11 @@ const AboutPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-      <Image alt='nilufer' className={styles.img} src="/about.png" fill/>
+      <Image alt='nilufer' className={styles.img} src="/about.jpeg" fill/>
       </div>
       <div className={styles.textContainer}>
       <h1 className={styles.title}>
-      Hi there, It&apos;s Nilufer. You can call me Nil.
+      Hi there, It&apos;s Nilufer.
       </h1>
       <p>
         

@@ -28,6 +28,7 @@
     3px -3px 1px #220310, 
     4px -3px 1px #220310, 
     5px -7px 6px rgba(16,16,16,0.4); */
+  font-weight: 600;
   flex: 1;
   color: var(--text);
 }

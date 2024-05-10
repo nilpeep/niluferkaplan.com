@@ -19,14 +19,14 @@ export default function Home() {
       <div className={styles.container}>
         <div className={styles.about}>
           <div className={styles.textContainer}>
-            <h1 className={styles.title}>Software developer.</h1>
+            <h1 className={styles.title}><em>Full-stack Web developer</em></h1>
             <p className={styles.description}>
               I create websites with taste.
               <br></br>
-              <br></br> Want to learn more? Check out
+              <br></br> Want to learn more? Check out &#8601;
             </p>
             <div className={styles.buttons}>
-              <ButtonDark onClick={openModal} text={"Contact Me"} />
+              <ButtonDark onClick={openModal} text={"Contact Me "} />
               <ButtonLight text={"Learn More"} />
             </div>
             <div>
