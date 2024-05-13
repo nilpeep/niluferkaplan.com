@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import { ReduxProvider } from "@/store";
 import store from "@/store";
+import Image from "next/image";
 
 
 const work_Sans = Work_Sans({ subsets: ["latin"] });
@@ -19,6 +20,9 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning={true} className={work_Sans.className}>
         <ReduxProvider store={store}>
         <div className="container">
+          <div className="imgContainer">
+            <Image src='/village.jpg' fill />
+          </div>
           <div className="children">
           <Navbar />
           </div>
