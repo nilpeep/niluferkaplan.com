@@ -10,10 +10,10 @@
 }
 
 .container:hover{
-    color:rgba(0, 0, 0, 0.54);
+    color:rgb(179, 179, 179);
 }
 
 .active{
-    color:rgba(0, 0, 0, 0.54);
+    color:rgb(179, 179, 179);
 }
 

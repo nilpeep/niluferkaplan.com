@@ -20,9 +20,9 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning={true} className={work_Sans.className}>
         <ReduxProvider store={store}>
         <div className="container">
-          <div className="imgContainer">
-            <Image src='/village.jpg' fill />
-          </div>
+          {/* <div className="imgContainer">
+            <Image className="img" src='/night.jpg' fill />
+          </div> */}
           <div className="children">
           <Navbar />
           </div>

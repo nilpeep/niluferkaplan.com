@@ -1,8 +1,8 @@
 :root{
     --bg: #0624FE;
-    --bgSoft: hsl(245, 21%, 21%);
-    --text: black;
-    --textSoft: rgba(0, 0, 0, 0.54);
+    --bgSoft: rgb(179, 179, 179);
+    --text: white;
+    --textSoft: rgb(179, 179, 179);
     --btn: #3673fd;
 
 }
@@ -12,6 +12,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+.img{
+    object-fit: cover;
+    object-position: right;
+}
+
+
 
 .imgContainer{
     position: fixed;
@@ -24,9 +30,7 @@
 }
 
 body{
-    background-color: #DCD9D4;
- background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
- background-blend-mode: soft-light,screen;
+    background-color: #5D524E;
     color: var(--text);
 }
 
